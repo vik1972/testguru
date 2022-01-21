@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 2022_01_19_170441) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_tests_on_category_id"
-    t.index ["title"], name: "index_tests_on_title"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,4 +52,7 @@ ActiveRecord::Schema.define(version: 2022_01_19_170441) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "questions", "tests"
+  add_foreign_key "tests", "categories"
 end
