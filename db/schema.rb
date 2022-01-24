@@ -49,11 +49,14 @@ ActiveRecord::Schema.define(version: 2022_01_19_170441) do
     t.string "name", null: false
     t.string "surname", null: false
     t.boolean "admin", default: false, null: false
+    t.integer "test_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["test_id"], name: "index_users_on_test_id"
   end
 
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
+  add_foreign_key "users", "tests"
 end
