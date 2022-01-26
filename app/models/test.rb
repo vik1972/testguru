@@ -1,7 +1,9 @@
 class Test < ApplicationRecord
-
+  belongs_to :category
   def self.sort_categories(category)
-    category_id = Category.where("title=?", category).pluck(:id)
-    self.where("category_id=?", category_id).order("title DESC").pluck(:title)
+    joins(:category)
+      .where(categories: {title: category})
+      .order('tests.title DESC')
+      .pluck(:title)
   end
 end
