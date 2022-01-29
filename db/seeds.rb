@@ -9,14 +9,22 @@
    {id: 0, title: "Начальный"}, 
    {id: 1, title: "Базовый"}, 
    {id: 2, title: "Сложный"}
-])
+  ])
+
+  users = User.create!([
+    {name: "Михаил", surname: "Петров", admin: true},
+    {name: "Сергей", surname: "Иванов"},
+    {name: "Илья", surname: "Сергеев"},
+    {name: "Маша", surname: "Петрова", admin: true},
+  ])
 
   tests = Test.create!([
-    {title: "Логические операции", level: 1, category_id: categories[1].id}, 
-    {title: "Информация и информационные процессы", category_id: categories[0].id}, 
-    {title: "Устройства ввода", category_id: categories[0].id}, 
-    {title: "Компьютерные сети", level:1, category_id: categories[1].id}
+    {title: "Логические операции", level: 1, category_id: categories[1].id, author_id: users[0].id }, 
+    {title: "Информация и информационные процессы", category_id: categories[0].id, author_id: users[0].id }, 
+    {title: "Устройства ввода", category_id: categories[0].id, author_id: users[0].id }, 
+    {title: "Компьютерные сети", level:1, category_id: categories[1].id, author_id: users[3].id }
   ]) 
+
   questions = Question.create!([
     {body: "Какой ученый разработал основы алгебры логики?", 
       test_id: tests[0].id},
@@ -124,13 +132,6 @@
     {body: "повышение защиты данных", value: 0, question_id: questions[15].id}, 
     {body: "упрощение обмена данными", value: 0.5, correct: true, question_id: questions[15].id}
   ]) 
-
-  users = User.create!([
-    {name: "Михаил", surname: "Петров"},
-    {name: "Сергей", surname: "Иванов"},
-    {name: "Илья", surname: "Сергеев"},
-    {name: "Маша", surname: "Петрова"},
-  ])
 
   PassedTest.create!([
     {user_id: 1, test_id: 1, score: 10, date: '2021-10-08'},
