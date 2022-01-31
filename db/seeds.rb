@@ -12,10 +12,10 @@
   ])
 
   users = User.create!([
-    {name: "Михаил", surname: "Петров", admin: true},
-    {name: "Сергей", surname: "Иванов"},
-    {name: "Илья", surname: "Сергеев"},
-    {name: "Маша", surname: "Петрова", admin: true},
+    {name: "Михаил", surname: "Петров", admin: true, email: "miha@ya.ru"},
+    {name: "Сергей", surname: "Иванов", email: "serega@ya.ru"},
+    {name: "Илья", surname: "Сергеев", email: "iliya@ya.ru"},
+    {name: "Маша", surname: "Петрова", admin: true, email: "masha@ya.ru"},
   ])
 
   tests = Test.create!([
