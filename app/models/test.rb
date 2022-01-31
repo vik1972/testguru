@@ -8,13 +8,13 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(levlel: 5..Float::INFINITY) }
-  scope :sort_category, -> (category) {
+  scope :categories, -> (category) {
       joins(:category)
         .where(categories: {title: category})
   }
   
   def self.sort_categories(category)
-    sort_category(category).order(title: :desc).pluck(:title)
+    categories(category).order(title: :desc).pluck(:title)
   end
 
   validates :level, numericality: {only_integer: true, greater_than_or_equal_to: 0}
