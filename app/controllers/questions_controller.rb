@@ -3,25 +3,32 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   before_action :find_test, only: %i[index create new]
-  before_action :find_question, only: %i[destroy]
+  before_action :find_question, only: %i[show destroy]
 
   def index
     render inline: 'Вопросы теста: <%= @test.questions.inspect %>'
   end
 
   def show
-    render inline: 'Вопрос: <%= Question.find(params[:id]).inspect %>'
+    render inline: 'Вопрос: <%= @question.inspect %>'
   end
 
   def new
   end
   
   def create
-    @question = @test.questions.create!(question_params)
+    begin
+      @question = @test.questions.create(question_params)
+      render plain: "Вопрос создан"
+    rescue
+      render plain: "Вопрос не создан"
+    end
+    
   end
 
   def destroy
-    @question.delete!
+    @question.delete
+    render plain: "Вопрос удален"
   end
 
   private
