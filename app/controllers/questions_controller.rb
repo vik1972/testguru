@@ -17,13 +17,13 @@ class QuestionsController < ApplicationController
   end
   
   def create
-    begin
-      @question = @test.questions.create(question_params)
+    question = @test.questions.new(question_params)
+
+    if question.save
       render plain: "Вопрос создан"
-    rescue
+    else
       render plain: "Вопрос не создан"
     end
-    
   end
 
   def destroy
