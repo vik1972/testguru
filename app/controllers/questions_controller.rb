@@ -5,9 +5,9 @@ class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index create new]
   before_action :find_question, only: %i[show destroy edit update]
 
-  # def index
-  #   render inline: 'Вопросы теста: <%= @test.questions.inspect %>'
-  # end
+  def index
+     render inline: 'Вопросы теста: <%= @test.questions.inspect %>'
+  end
 
   def show; end
 
@@ -18,10 +18,10 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.new(question_params)
 
-    if @question.save
-      redirect_to @question
+    if question.save
+      render plain: "Вопрос создан"
     else
-      render :new
+      render plain: "Вопрос не создан"
     end
   end
 
