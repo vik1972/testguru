@@ -1,3 +1,7 @@
 <h1>Редактировать вопрос</h1>
 
 <%= render "form" %>
+<%= link_to "Назад", test_path(@test, id: @question.test_id) %>
+<br><br>
+
+<p><%= render "shared/footer" %></p>
