@@ -6,7 +6,7 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
+  before_validation :before_validation_set_question, on: %i[create update]
 
   def success?
     percent_correct >= PASSING_SCORE
@@ -20,8 +20,6 @@ class TestPassage < ApplicationRecord
     if correct_answer?(answer_ids)
       self.correct_questions += 1
     end
-
-    self.current_question = next_question
     save!
   end
 
@@ -37,8 +35,8 @@ class TestPassage < ApplicationRecord
    test.questions.order(:id).where('id < ?', current_question.id).count + 1
   end
 
-  def before_validation_set_first_question
-    self.current_question = test.questions.first if test.present?
+  def before_validation_set_question
+      self.current_question = next_question 
   end
 
   def correct_answer?(answer_ids)
@@ -50,6 +48,11 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
+    if new_record?
+      test.questions.first if test.present?
+    else
+      test.questions.order(:id).where('id > ?', current_question.id).first
+    end
   end
+
 end
