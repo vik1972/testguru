@@ -2,9 +2,7 @@ class TestsController < ApplicationController
   
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
-  before_action :authenticate_user!
   before_action :find_test, only: %i[show edit update destroy start]
-  before_action :set_user, only: :start
 
   def index
     @tests = Test.all
@@ -61,9 +59,4 @@ class TestsController < ApplicationController
   def rescue_with_test_not_found
     render plain: "Тест не найден"
   end
-
-  def set_user
-    @user = User.first
-  end
-
 end
