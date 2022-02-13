@@ -4,6 +4,11 @@ class User < ApplicationRecord
   has_many :author_tests, class_name: 'Test', foreign_key: :author_id
 
   validates :name, :surname, :email, presence: true
+  validates :email, uniqueness: true,
+            format: { with: URI::MailTo::EMAIL_REGEXP,
+                       message: "Формат почты: name@example.com" }
+
+  has_secure_password
 
   def test_by_level(level)
     Test.joins(:passed_tests)
