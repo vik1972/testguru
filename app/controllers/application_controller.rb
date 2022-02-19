@@ -1,25 +1,21 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
-  protect_from_forgery with: :exception
   
-  helper_method :current_user,
-                :logged_in?
+  protect_from_forgery with: :exception
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  private
+  protected
 
-  def authenticate_user!
-    unless current_user
-      cookies[:path_to_last_requesth] = request.fullpath
-      redirect_to login_path, alert: "Авторизуйтесь для входа в TestGuru"
-    end
+  def after_sign_in_path_for(user)
+    current_user.admin? ? admin_tests_path : root_path
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user.present?
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, 
+                                      keys: [:email,
+                                             :name,
+                                             :surname,
+                                             :password,
+                                             :password_confirmation])
   end
 end
 

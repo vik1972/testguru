@@ -6,16 +6,16 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
   categories = Category.create!([
-   {id: 0, title: "Начальный"}, 
-   {id: 1, title: "Базовый"}, 
-   {id: 2, title: "Сложный"}
+   {title: "Начальный"}, 
+   {title: "Базовый"}, 
+   {title: "Сложный"}
   ])
 
   users = User.create!([
-    {name: "Михаил", surname: "Петров", admin: true, email: "miha@ya.ru"},
-    {name: "Сергей", surname: "Иванов", email: "serega@ya.ru"},
-    {name: "Илья", surname: "Сергеев", email: "iliya@ya.ru"},
-    {name: "Маша", surname: "Петрова", admin: true, email: "masha@ya.ru"},
+    {name: "Михаил", surname: "Петров", email: "miha@ya.ru", password: "123456"},
+    {name: "Сергей", surname: "Иванов", email: "serega@ya.ru", password: "123456"},
+    {name: "Илья", surname: "Сергеев", email: "iliya@ya.ru", password: "123456"},
+    {name: "Маша", surname: "Петрова",  email: "masha@ya.ru", password: "123456"},
   ])
 
   tests = Test.create!([
