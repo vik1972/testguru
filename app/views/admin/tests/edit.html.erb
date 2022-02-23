@@ -1,6 +1,6 @@
-<h1>Редактировать <%= @test.title %> тест</h1>
+<h1><%= t('.title') + ': ' %><%= @test.title %></h1>
 
 <%= render "form" %>
 
-<%= link_to "Назад", admin_tests_path %>
+<%= link_to t('admin.actions.back'), admin_tests_path %>
 <br><br>

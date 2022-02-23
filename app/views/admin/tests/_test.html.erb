@@ -3,12 +3,12 @@
   <td><%= test.category.title %></td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions.size %></td>
-  <td><%= link_to "Посмотреть", admin_test_path(test) %></td>
-  <td><%= link_to "Редактировать", edit_admin_test_path(test) %></td>
-  <td><%= link_to "Удалить", 
+  <td><%= link_to t('admin.actions.show'), admin_test_path(test) %></td>
+  <td><%= link_to t('admin.actions.edit'), edit_admin_test_path(test) %></td>
+  <td><%= link_to t('admin.actions.delete'), 
         admin_test_path(test), 
         method: :delete,
-        data: { confirm: 'Вы уверены?' }
+        data: { confirm: t('admin.actions.confirm') }
       %>
   </td>
 </tr>

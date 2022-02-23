@@ -1,8 +1,8 @@
 class TestsMailer < ApplicationMailer
-  def completed_test(test_passage)
+   def completed_test(test_passage)
     @user = test_passage.user
     @test = test_passage.test
 
-    mail to: @user.email, subject: "Вы успешно прошли тест на TestGuru"
+    mail to: @user.email 
   end
 end

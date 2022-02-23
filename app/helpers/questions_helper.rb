@@ -1,9 +1,9 @@
 module QuestionsHelper
   def question_header(question)
     if question.persisted?
-      "Редактировать вопрос: \"#{question.body}\" "
+      t('admin.questions.show.edit_question')  #{question.body} 
     else
-      "Создать новый вопрос"
+      t('admin.questions.show.new_question')
     end
   end
 end
