@@ -1,33 +1,119 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  admin:
+    actions:
+      show: "Show"
+      edit: "Edit"
+      delete: "Delete"
+      confirm: "Are you sure?"
+      back: "Back"
+
+    tests:
+      create:
+        succes: 'Test was successfully created'
+      index:
+        header: "Tricky Tests"
+        new_test: "New test"
+        title: "Title"
+        category: "Category"
+        level: "Level"
+        questions: "Questions"
+        actions: "Actions"
+      edit:
+        title: "Edit test"
+        test: "Test"
+      new:
+        new_test: "New test"
+      test:
+        confirm: "Are you sure?"
+      show:
+        test: "Test"
+        level: "Level"
+        new_question: "New question"
+        questions: "Questions"
+        edit_test: "Edit test"
+    questions:
+      show:
+        header: "Question"
+        answers: "Answers"
+        edit_question: "Edit question"
+    answers:
+      show:
+        header: "Question"
+        answer: "Answer:"
+        correct: "Correct:"
+      new:
+        header: "New answer"
+      edit:
+        header: "Edit answer"
+    navbar:
+      header: "Admin Panel"
+      logout: "Logout"
+
+  shared:
+    navbar:
+      header: "TestGuru"
+      welcome: "Welcome, "
+      logout: "Logout"
+      sign_up: "Sign_Up"
+      sign_in: "Sign_In"
+    errors:
+      header:
+        one: "Detected %{count} error"
+        other: "Detected %{count} errors"
+
+  tests:
+    test:
+      begin: "Start test"
+    index:
+      header: "Tricky tests"
+      title: "Title"
+      category: "Category"
+      level: "Level"
+      quest_count: "Questions count"
+      actions: "Actions"
+
+  test_passages:
+    result:
+      header: "Test %{title} was successfully completed!"
+      result: "Your result: "
+      success: "Test passed."
+      fail: "Try again."
+      link_back: "Return to test choice"
+    show:
+      current_test: "You're taking the test %{title}"
+      question_num: "Question № "
+      from: " from"
+      next: "Next"
+
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+      question:
+        create: "Create question"
+        update: "Save question"
+      answer:
+        create: "Correct answer"
+        update: "Save answer"
+    select:
+      prompt: "Select a category"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      answer:
+        body: "Body answer"
+        value: "Value"
+        correct: "Correct"
+
+  layouts:
+    admin:
+      panel: "Admin Panel | TestGuru"
+      
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+
+
