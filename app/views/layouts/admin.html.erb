@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%= t('.panel') %></title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,12 +11,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= render 'admin/navbar' %>
-
-    <%= render 'shared/flash' %> 
-
-    <%= yield %>
-
-    <%= render 'shared/footer' %>
+    <div class="container">
+      <%= render 'admin/navbar' %>
+      <%= render 'shared/flash' %> 
+      <%= yield %>
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>

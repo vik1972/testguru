@@ -1,4 +1,11 @@
 module ApplicationHelper 
+
+    ALERTS = {
+      notice: "info",
+      error: "danger",
+      success: "success",
+      alert: "warning"
+    }
   
   def current_year
     Date.current.year
@@ -8,8 +15,8 @@ module ApplicationHelper
     link_to 'Проект githab', "https://github.com/#{author}/#{repo}", target: '_blank'
   end
 
-  def flash_message(key)
-    content_tag :p, flash[key], class: "flash #{key}" if flash[key]
+  def flash_alert(flash)
+    ALERTS[flash.to_sym] if flash[flash]
   end
 end
 

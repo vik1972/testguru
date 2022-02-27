@@ -6,23 +6,21 @@ ru:
       delete: "Удалить"
       confirm: "Вы уверены?"
       back: "Назад"
-      
+
     tests:
       create:
         succes: "Тест успешно создан"
       index:
         header: "Доступные тесты"
-        new_test: "Создать тест"
         title: "Название теста"
         category: "Категория"
         level: "Уровень"
         questions: "Вопросов"
         actions: "Действия"
+        new_test: "Создать новый тест"
       edit:
         title: "Редактировать тест"
         test: "тест"
-      new:
-        new_test: "Создать новый тест"
       test:
         confirm: "Вы уверены?"
       show:
@@ -31,6 +29,8 @@ ru:
         new_question: "Создать вопрос"
         questions: "Вопросы теста"
         edit_test: "Редактировать тест"
+      new:
+        new_test: "Создать новый тест"
     questions:
       show:
         header: "Вопрос"
@@ -51,6 +51,17 @@ ru:
       header: "Панель Администратора"
       logout: "Выход"
 
+  
+  devise:
+    sessions:
+      new:
+        header: "Войдите в ТестГуру"
+        email: "Эл.почта"
+        pasword: "Пароль"
+        remember_me: "Запомнить меня"
+        enter: "Вход"
+
+    
 
   shared:
     navbar:
@@ -101,6 +112,10 @@ ru:
       answer:
         create: "Создать ответ"
         update: "Сохранить ответ"
+      devise:
+        sessions:
+          new:
+            enter: "Вход"
     select:
       prompt: "Выбрать категорию"
     label:
@@ -114,14 +129,17 @@ ru:
         correct: "Корректность"
       question:
         body: "Текст вопроса"
+      
+
 
   layouts:
+    header: "ТестГуру"
     admin:
-      panel: "Панель Администратора | TestGuru"
+      panel: "Панель Администратора | ТестГуру"
 
   tests_mailer:
     completed_test:
-      subject: "Вы успешно завершили тест на TestGuru!"
+      subject: "Вы успешно завершили тест на ТестГуру!"
 
 
 
