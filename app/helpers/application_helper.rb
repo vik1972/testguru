@@ -16,7 +16,7 @@ module ApplicationHelper
   end
 
   def flash_alert(flash)
-    ALERTS[flash.to_sym]
+    ALERTS[flash.to_sym] if flash[flash]
   end
 end
 

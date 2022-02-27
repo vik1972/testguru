@@ -10,10 +10,9 @@ class ApplicationController < ActionController::Base
 
   private
 
-  #def after_sign_in_path_for(user)
-    #current_user.admin? ? admin_tests_path : root_path
-    #root_path
-  #end
+  def after_sign_in_path_for(user)
+    current_user.admin? ? admin_tests_path : root_path
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, 
