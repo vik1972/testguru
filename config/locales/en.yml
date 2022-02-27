@@ -6,6 +6,7 @@ en:
       delete: "Delete"
       confirm: "Are you sure?"
       back: "Back"
+      
 
     tests:
       create:
@@ -18,11 +19,10 @@ en:
         level: "Level"
         questions: "Questions"
         actions: "Actions"
+        new_test: "New test"
       edit:
         title: "Edit test"
         test: "Test"
-      new:
-        new_test: "New test"
       test:
         confirm: "Are you sure?"
       show:
@@ -31,6 +31,8 @@ en:
         new_question: "New question"
         questions: "Questions"
         edit_test: "Edit test"
+      new:
+        new_test: "New test"
     questions:
       show:
         header: "Question"
@@ -48,6 +50,16 @@ en:
     navbar:
       header: "Admin Panel"
       logout: "Logout"
+
+  devise:
+    sessions:
+      new:
+        header: "Enter the Guru Gates"
+        email: "Email"
+        pasword: "Pasword"
+        remember_me: "Remember me"
+        enter: "Enter"
+
 
   shared:
     navbar:
@@ -96,6 +108,10 @@ en:
       answer:
         create: "Correct answer"
         update: "Save answer"
+      devise:
+        sessions:
+          new:
+            enter: "Enter"
     select:
       prompt: "Select a category"
     label:
@@ -107,8 +123,11 @@ en:
         body: "Body answer"
         value: "Value"
         correct: "Correct"
+      
+
 
   layouts:
+    header: "TestGuru"
     admin:
       panel: "Admin Panel | TestGuru"
       
