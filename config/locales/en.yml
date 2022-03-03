@@ -6,6 +6,12 @@ en:
       delete: "Delete"
       confirm: "Are you sure?"
       back: "Back"
+    gists:
+      index:
+        header: "Created gists"
+        question: "Question"
+        url: "Gist url"
+        email: "User email"
       
 
     tests:
@@ -96,6 +102,10 @@ en:
       question_num: "Question № "
       from: " from"
       next: "Next"
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occured while saving gist!"
+      view_gist: "View Gist on GitHub"
 
   helpers:
     submit:
@@ -134,5 +144,9 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+
+  services:
+    gist_question_service:
+      desc: "A question from test %{title} (TestGuru)"
 
 
