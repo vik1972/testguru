@@ -2,9 +2,11 @@
   <div class="container">
     <%= link_to t('layouts.header'), root_path, class: 'navbar-brand' %>
     <span class="navbar-text">
+      <% if Gist.any? %>
+        <%= link_to t('.gists'), admin_gists_path, class: "btn btn-outline-secondary text-light", target: :_blank %>
+      <% end %>
 
-
-    <%= t('shared.navbar.welcome') %><b><%= current_user.email %></b> 
+      <%= t('shared.navbar.welcome') %><b><%= current_user.email %></b> 
         <%= link_to t('shared.navbar.logout'), destroy_user_session_path, method: :delete, class: "btn btn-outline-light text-light" %>
   </div>
 </nav>
