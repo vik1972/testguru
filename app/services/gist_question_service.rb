@@ -1,8 +1,8 @@
 class GistQuestionService
   attr_reader :client
 
-  #ACCESS_TOKEN = ENV['TOKEN_TEST_GURU']
-  ACCESS_TOKEN = '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'
+  ACCESS_TOKEN = ENV['TOKEN_TEST_GURU']
+ 
 
   def initialize(question, client = client_octokit)
     @question = question
