@@ -37,9 +37,10 @@ gem 'devise', '~> 4.0'
 #UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.1.3'
+gem 'octicons_helper'
+
 
 #NETWORKING
-#gem  'faraday'
 gem 'octokit', '~>4.0'
 
 group :development, :test do

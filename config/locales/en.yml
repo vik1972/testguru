@@ -65,8 +65,7 @@ en:
         pasword: "Pasword"
         remember_me: "Remember me"
         enter: "Enter"
-
-
+  
   shared:
     navbar:
       header: "TestGuru"
