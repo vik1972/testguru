@@ -22,7 +22,7 @@ function passwordCheck() {
     document.querySelector('.text-success').classList.add('hide')
     document.querySelector('.text-danger').classList.add('hide')
     return
-  } else  if (password.value == passwordConfirm.value) {
+  } if (password.value == passwordConfirm.value) {
       passwordConfirm.classList.add('border-green')
       showSuccessIcon()
     } else {
