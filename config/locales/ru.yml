@@ -67,8 +67,6 @@ ru:
         remember_me: "Запомнить меня"
         enter: "Вход"
 
-    
-
   shared:
     navbar:
       header: "Тест Гуру"

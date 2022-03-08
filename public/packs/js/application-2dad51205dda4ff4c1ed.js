@@ -137,6 +137,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _rails_activestorage__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_rails_activestorage__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var channels__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! channels */ "./app/javascript/channels/index.js");
 /* harmony import */ var channels__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(channels__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _utilities_sorting__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utilities/sorting */ "./app/javascript/utilities/sorting.js");
+/* harmony import */ var _utilities_sorting__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_utilities_sorting__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _utilities_password_check_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utilities/password_check.js */ "./app/javascript/utilities/password_check.js");
+/* harmony import */ var _utilities_password_check_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_utilities_password_check_js__WEBPACK_IMPORTED_MODULE_5__);
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
@@ -145,9 +149,154 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+ //=require jquery3
+//=require popper
+//=require bootstrap-sprockets
+//=require_tree .
+
 _rails_ujs__WEBPACK_IMPORTED_MODULE_0___default.a.start();
 turbolinks__WEBPACK_IMPORTED_MODULE_1___default.a.start();
 _rails_activestorage__WEBPACK_IMPORTED_MODULE_2__["start"]();
+
+/***/ }),
+
+/***/ "./app/javascript/utilities/password_check.js":
+/*!****************************************************!*\
+  !*** ./app/javascript/utilities/password_check.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+document.addEventListener('turbolinks:load', function () {
+  var password = document.querySelector('.check-password');
+  var passwordConfirm = document.querySelector('.confirm-password');
+
+  if (password && passwordConfirm) {
+    passwordConfirm.addEventListener('input', passwordCheck);
+  }
+});
+
+function passwordCheck() {
+  var password = document.querySelector('.check-password');
+  var passwordConfirm = document.querySelector('.confirm-password');
+
+  if (passwordConfirm.classList.contains('border-red')) {
+    passwordConfirm.classList.remove('border-red');
+  }
+
+  if (passwordConfirm.classList.contains('border-green')) {
+    passwordConfirm.classList.remove('border-green');
+  }
+
+  if (passwordConfirm.value === '') {
+    document.querySelector('.text-success').classList.add('hide');
+    document.querySelector('.text-danger').classList.add('hide');
+    return;
+  } else if (password.value == passwordConfirm.value) {
+    passwordConfirm.classList.add('border-green');
+    showSuccessIcon();
+  } else {
+    passwordConfirm.classList.add('border-red');
+    showDangerIcon();
+  }
+}
+
+function showSuccessIcon() {
+  if (document.querySelector('.text-success').classList.contains('hide')) {
+    document.querySelector('.text-success').classList.remove('hide');
+    document.querySelector('.text-danger').classList.add('hide');
+  }
+}
+
+function showDangerIcon() {
+  if (document.querySelector('.text-danger').classList.contains('hide')) {
+    document.querySelector('.text-danger').classList.remove('hide');
+    document.querySelector('.text-success').classList.add('hide');
+  }
+}
+
+/***/ }),
+
+/***/ "./app/javascript/utilities/sorting.js":
+/*!*********************************************!*\
+  !*** ./app/javascript/utilities/sorting.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+document.addEventListener('turbolinks:load', function () {
+  var control = document.querySelector('.sort-by-title');
+
+  if (control) {
+    control.addEventListener('click', sortRowsByTitle);
+  }
+});
+
+function sortRowsByTitle() {
+  var table = document.querySelector('table'); //NodeList
+  //https://developer.mozilla.org/ru/docs/Web/API/NodeList
+
+  var rows = table.querySelectorAll('tr');
+  var sortedRows = []; //select all table rows except the first one which is the header
+
+  for (var i = 1; i < rows.length; i++) {
+    sortedRows.push(rows[i]);
+  }
+
+  if (this.querySelector('.octicon-arrow-up').classList.contains('hide')) {
+    sortedRows.sort(compareRowsAsc);
+    this.querySelector('.octicon-arrow-up').classList.remove('hide');
+    this.querySelector('.octicon-arrow-down').classList.add('hide');
+  } else {
+    sortedRows.sort(compareRowsDesc);
+    this.querySelector('.octicon-arrow-down').classList.remove('hide');
+    this.querySelector('.octicon-arrow-up').classList.add('hide');
+  }
+
+  var sortedTable = document.createElement('table');
+  sortedTable.classList.add('table');
+  sortedTable.classList.add('table-striped');
+  var thead = document.createElement('thead');
+  sortedTable.appendChild(thead);
+  thead.appendChild(rows[0]);
+
+  for (var i = 0; i < sortedRows.length; i++) {
+    sortedTable.appendChild(sortedRows[i]);
+  }
+
+  table.parentNode.replaceChild(sortedTable, table);
+}
+
+function compareRowsAsc(row1, row2) {
+  var testTitle1 = row1.querySelector('td').textContent;
+  var testTitle2 = row2.querySelector('td').textContent;
+
+  if (testTitle1 < testTitle2) {
+    return -1;
+  }
+
+  if (testTitle1 > testTitle2) {
+    return 1;
+  }
+
+  return 0;
+}
+
+function compareRowsDesc(row1, row2) {
+  var testTitle1 = row1.querySelector('td').textContent;
+  var testTitle2 = row2.querySelector('td').textContent;
+
+  if (testTitle1 < testTitle2) {
+    return 1;
+  }
+
+  if (testTitle1 > testTitle2) {
+    return -1;
+  }
+
+  return 0;
+}
 
 /***/ }),
 
@@ -1299,7 +1448,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       form.removeChild(button);
     }
 
-    submitButtonsByForm.delete(form);
+    submitButtonsByForm["delete"](form);
   }
 
   function disable(input) {
@@ -3245,4 +3394,4 @@ module.exports = function (module) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=application-3dd0dc24d9c39bc09227.js.map
+//# sourceMappingURL=application-2dad51205dda4ff4c1ed.js.map
