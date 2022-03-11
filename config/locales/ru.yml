@@ -12,7 +12,6 @@ ru:
         question: "Вопрос"
         url: "Url гиста"
         email: "Почта"
-
     tests:
       create:
         succes: "Тест успешно создан"
@@ -27,6 +26,7 @@ ru:
       edit:
         title: "Редактировать тест"
         test: "тест"
+        cancel: "Отменить"
       test:
         confirm: "Вы уверены?"
       show:
@@ -37,6 +37,8 @@ ru:
         edit_test: "Редактировать тест"
       new:
         new_test: "Создать новый тест"
+      form_inline: 
+        submit: "OK"
     questions:
       show:
         header: "Вопрос"
