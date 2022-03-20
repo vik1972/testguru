@@ -12,7 +12,7 @@
   ])
 
   users = User.create!([
-    {name: "Михаил", surname: "Петров", email: "miha@ya.ru", password: "123456"},
+    {name: "Михаил", surname: "Петров", email: "miha@ya.ru", type: "Admin", password: "123456"},
     {name: "Сергей", surname: "Иванов", email: "serega@ya.ru", password: "123456"},
     {name: "Илья", surname: "Сергеев", email: "iliya@ya.ru", password: "123456"},
     {name: "Viktor", surname: "Belkin",  email: "bviktor4@gmail.com", type: "Admin", password: "Vik2022"}
@@ -134,11 +134,11 @@
   ]) 
 
   TestPassage.create!([
-    {user_id: 1, test_id: test[0].id},
-    {user_id: 1, test_id: test[1].id},
-    {user_id: 1, test_id: test[2].id},
-    {user_id: 2, test_id: test[0].id},
-    {user_id: 2, test_id: test[1].id},
-    {user_id: 1, test_id: test[3].id},
-    {user_id: 2, test_id: test[3].id}
+    {user_id: user[0].id, test_id: test[0].id},
+    {user_id: user[0].id, test_id: test[1].id},
+    {user_id: user[0].id, test_id: test[2].id},
+    {user_id: user[3].id, test_id: test[0].id},
+    {user_id: user[0].id, test_id: test[1].id},
+    {user_id: user[3].id, test_id: test[3].id},
+    {user_id: user[3].id, test_id: test[3].id}
   ])
