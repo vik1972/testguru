@@ -134,11 +134,11 @@
   ]) 
 
   TestPassage.create!([
-    {user_id: user[0].id, test_id: test[0].id},
-    {user_id: user[0].id, test_id: test[1].id},
-    {user_id: user[0].id, test_id: test[2].id},
-    {user_id: user[3].id, test_id: test[0].id},
-    {user_id: user[0].id, test_id: test[1].id},
-    {user_id: user[3].id, test_id: test[3].id},
-    {user_id: user[3].id, test_id: test[3].id}
+    {user_id: users[0].id, test_id: tests[0].id},
+    {user_id: users[0].id, test_id: tests[1].id},
+    {user_id: users[0].id, test_id: tests[2].id},
+    {user_id: users[3].id, test_id: tests[0].id},
+    {user_id: users[0].id, test_id: tests[1].id},
+    {user_id: users[3].id, test_id: tests[3].id},
+    {user_id: users[3].id, test_id: tests[3].id}
   ])
