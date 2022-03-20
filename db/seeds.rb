@@ -15,7 +15,7 @@
     {name: "Михаил", surname: "Петров", email: "miha@ya.ru", type: "Admin", password: "123456"},
     {name: "Сергей", surname: "Иванов", email: "serega@ya.ru", password: "123456"},
     {name: "Илья", surname: "Сергеев", email: "iliya@ya.ru", password: "123456"},
-    {name: "Viktor", surname: "Belkin",  email: "bviktor4@gmail.com", type: "Admin", password: "Vik2022"}
+    {name: "Viktor", surname: "Belkin",  email: "testguru2022@gmail.com", type: "Admin", password: "Vik2022"}
   ])
 
   tests = Test.create!([
