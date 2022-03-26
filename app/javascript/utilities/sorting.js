@@ -36,8 +36,12 @@ function sortRowsByTitle(){
   sortedTable.appendChild(thead)
   thead.appendChild(rows[0])
 
+  var tbody = document.createElement('tbody')
+  tbody.classList.add('table-striped')
+  sortedTable.appendChild(tbody)
+
   for (var i = 0; i < sortedRows.length; i++) {
-    sortedTable.appendChild(sortedRows[i])
+    tbody.appendChild(sortedRows[i])
   }
 
   table.parentNode.replaceChild(sortedTable, table)

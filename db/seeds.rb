@@ -133,12 +133,4 @@
     {body: "упрощение обмена данными", value: 1, correct: true, question_id: questions[15].id}
   ]) 
 
-  TestPassage.create!([
-    {user_id: users[0].id, test_id: tests[0].id},
-    {user_id: users[0].id, test_id: tests[1].id},
-    {user_id: users[0].id, test_id: tests[2].id},
-    {user_id: users[3].id, test_id: tests[0].id},
-    {user_id: users[0].id, test_id: tests[1].id},
-    {user_id: users[3].id, test_id: tests[3].id},
-    {user_id: users[3].id, test_id: tests[3].id}
-  ])
+ 

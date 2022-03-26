@@ -40,6 +40,9 @@ en:
         new_test: "New test"
       form_inline: 
         submit: "OK"
+      destroy:
+        delete: "The test is occupied by another user"
+        success: "The test was successfully deleted"
     questions:
       show:
         header: "Question"
@@ -82,6 +85,8 @@ en:
   tests:
     test:
       begin: "Start test"
+    start:
+      not_questions: "The test does not contain questions"
     index:
       header: "Tricky tests"
       title: "Title"
@@ -102,6 +107,9 @@ en:
       question_num: "Question № "
       from: " from"
       next: "Next"
+      test_not_found: "Test nit found"
+    update:
+      test_not_found: "Test nit found"
     gist:
       success: "Gist was successfully created!"
       failure: "An error occured while saving gist!"

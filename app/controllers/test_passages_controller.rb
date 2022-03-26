@@ -47,6 +47,12 @@ class TestPassagesController < ApplicationController
   end
 
   def set_test_passage
-    @test_passage = TestPassage.find(params[:id])
+    if TestPassage.exists?(params[:id])
+      @test_passage = TestPassage.find(params[:id])
+    else
+      flash[:alert] = t('.test_not_found')
+      redirect_to root_path
+    end
   end
+    
 end
