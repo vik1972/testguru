@@ -19,10 +19,10 @@
   ])
 
   tests = Test.create!([
-    {title: "Логические операции", level: 1, category_id: categories[1].id, author_id: users[0].id }, 
-    {title: "Информация и информационные процессы", category_id: categories[0].id, author_id: users[0].id }, 
-    {title: "Устройства ввода", category_id: categories[0].id, author_id: users[0].id }, 
-    {title: "Компьютерные сети", level:1, category_id: categories[1].id, author_id: users[3].id }
+    {title: "Логические операции", level: 1, category_id: categories[1].id, author_id: users[0].id, ready: true}, 
+    {title: "Информация и информационные процессы", category_id: categories[0].id, author_id: users[0].id, ready: true }, 
+    {title: "Устройства ввода", category_id: categories[0].id, author_id: users[0].id, ready: true }, 
+    {title: "Компьютерные сети", level:1, category_id: categories[1].id, author_id: users[3].id, ready: true }
   ]) 
 
   questions = Question.create!([

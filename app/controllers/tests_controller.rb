@@ -11,13 +11,7 @@ class TestsController < ApplicationController
   
   def start
     current_user.tests.push(@test)
-    if current_user.test_passage(@test).total_test_questions != 0
-      redirect_to current_user.test_passage(@test)
-    else
-      flash[:alert] = t('.not_questions')
-      redirect_to root_path
-    end
-
+    redirect_to current_user.test_passage(@test)
   end
   
   private

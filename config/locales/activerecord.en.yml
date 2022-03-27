@@ -6,6 +6,9 @@ en:
     attributes:
       test:
         title: "Title"
+        category: "Category"
+        ready: "Test unready"
+
 
     errors:
       messages:

@@ -25,7 +25,7 @@ ru:
         new_test: "Создать новый тест"
       edit:
         title: "Редактировать тест"
-        test: "тест"
+        test: "Tест"
         cancel: "Отменить"
       test:
         confirm: "Вы уверены?"
