@@ -12,17 +12,17 @@
   ])
 
   users = User.create!([
-    {name: "Михаил", surname: "Петров", email: "miha@ya.ru", password: "123456"},
+    {name: "Михаил", surname: "Петров", email: "miha@ya.ru", type: "Admin", password: "123456"},
     {name: "Сергей", surname: "Иванов", email: "serega@ya.ru", password: "123456"},
     {name: "Илья", surname: "Сергеев", email: "iliya@ya.ru", password: "123456"},
-    {name: "Маша", surname: "Петрова",  email: "masha@ya.ru", password: "123456"},
+    {name: "Viktor", surname: "Belkin",  email: "testguru2022@gmail.com", type: "Admin", password: "Vik2022"}
   ])
 
   tests = Test.create!([
-    {title: "Логические операции", level: 1, category_id: categories[1].id, author_id: users[0].id }, 
-    {title: "Информация и информационные процессы", category_id: categories[0].id, author_id: users[0].id }, 
-    {title: "Устройства ввода", category_id: categories[0].id, author_id: users[0].id }, 
-    {title: "Компьютерные сети", level:1, category_id: categories[1].id, author_id: users[3].id }
+    {title: "Логические операции", level: 1, category_id: categories[1].id, author_id: users[0].id, ready: true}, 
+    {title: "Информация и информационные процессы", category_id: categories[0].id, author_id: users[0].id, ready: true }, 
+    {title: "Устройства ввода", category_id: categories[0].id, author_id: users[0].id, ready: true }, 
+    {title: "Компьютерные сети", level:1, category_id: categories[1].id, author_id: users[3].id, ready: true }
   ]) 
 
   questions = Question.create!([
@@ -133,12 +133,4 @@
     {body: "упрощение обмена данными", value: 1, correct: true, question_id: questions[15].id}
   ]) 
 
-  TestPassage.create!([
-    {user_id: 1, test_id: test[0].id},
-    {user_id: 1, test_id: test[1].id},
-    {user_id: 1, test_id: test[2].id},
-    {user_id: 2, test_id: test[0].id},
-    {user_id: 2, test_id: test[1].id},
-    {user_id: 1, test_id: test[3].id},
-    {user_id: 2, test_id: test[3].id}
-  ])
+ 

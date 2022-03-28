@@ -25,7 +25,7 @@ ru:
         new_test: "Создать новый тест"
       edit:
         title: "Редактировать тест"
-        test: "тест"
+        test: "Tест"
         cancel: "Отменить"
       test:
         confirm: "Вы уверены?"
@@ -39,6 +39,9 @@ ru:
         new_test: "Создать новый тест"
       form_inline: 
         submit: "OK"
+      destroy:
+        delete: "Тест занят другим пользователем"
+        success: "Тест успешно удален"
     questions:
       show:
         header: "Вопрос"
@@ -86,6 +89,8 @@ ru:
   tests:
     test:
       begin: "Начать тест"
+    start:
+      not_questions: "Тест не содержит вопросов"
     index:
       header: "Доступные тесты"
       title: "Название теста"
@@ -93,6 +98,7 @@ ru:
       level: "Уровень"
       questions: "Вопросов"
       actions: "Действия"
+
 
   test_passages:
     result:
@@ -106,6 +112,9 @@ ru:
       question_num: "Вопрос № "
       from: " из"
       next: "Далее"
+      test_not_found: "Тест не найден"
+    update:
+      test_not_found: "Тест не найден"
     gist:
       success: "Gist успешно сохранен!"
       failure: "Во время сохранения gist произошла ошибка!"
@@ -155,6 +164,16 @@ ru:
     gist_question_service:
       desc: "Вопрос из теста %{title} (TestGuru)"
 
+  feedbacks:
+    new:
+      header: "Написать сообщение администрации сайта"
+    create:
+      success: "Ваше сообщение отправлено администрации"
+      failure: "Сообщение не отправлено. Во время отправки произошла ошибка"
+    form:
+      email: "Ваш адрес электронной почты"
+      feedback: "Ваше сообщение"
+      submit: "Отправить"
 
 
 
