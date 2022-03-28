@@ -1,9 +1,7 @@
-<% if test.ready %>
-  <tr>
-    <td><%= test.title %></td>
-    <td><%= test.category.title %></td>
-    <td><%= test_level(test) %></td>
-    <td><%= test.questions.size %></td>
-    <td><%= button_to t('.begin'), start_test_path(test) %></td>
-  </tr>
-<% end %>
+<tr>
+  <td><%= test.title %></td>
+  <td><%= test.category.title %></td>
+  <td><%= test_level(test) %></td>
+  <td><%= test.questions.size %></td>
+  <td><%= button_to t('.begin'), start_test_path(test) %></td>
+</tr>
