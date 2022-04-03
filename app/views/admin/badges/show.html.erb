@@ -1,0 +1,16 @@
+<p>
+  <strong><%=t('.badge') %>:</strong>
+  "<%= @badge.title %>"
+</p>
+
+<p>
+  <strong><%= t('.rule') %>:</strong>
+  <%= @badge.rule %>
+</p>
+
+<p>
+  <strong><%= t('.alt_image_tag') %></strong>
+  <%= image_tag( @badge.img_url, size: "20x30", alt: t('.alt_image_tag')) %>
+</p>
+<%= link_to t('.edit_badge'), edit_admin_badge_path %>
+<%= link_to t('admin.actions.back'), admin_badges_path %>

@@ -2,6 +2,7 @@
   <div class="container">
     <%= link_to t('layouts.header'), root_path, class: 'navbar-brand' %>
     <span class="navbar-text">
+      <%= link_to t('.badge'), admin_badges_path, class: "btn btn-outline-secondary text-light" %>
       <% if Gist.any? %>
         <%= link_to t('.gists'), admin_gists_path, class: "btn btn-outline-secondary text-light", target: :_blank %>
       <% end %>

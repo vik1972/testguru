@@ -133,4 +133,6 @@
     {body: "упрощение обмена данными", value: 1, correct: true, question_id: questions[15].id}
   ]) 
 
+  
+
  

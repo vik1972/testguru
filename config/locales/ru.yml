@@ -61,7 +61,31 @@ ru:
     navbar:
       header: "Панель Администратора"
       logout: "Выход"
-
+      badge: "Бэйджи"
+      gists: "Гисты"
+    badges:
+      index:
+        header: "Все доступные бэйджи"
+        badge: "Бэйдж"
+        title: "Название бэйджа"
+        new_badge: "Создать новый бэйдж"
+        rule: "Правило выдачи бэйджа"
+        alt_image_tag: "Изображение бэйджа"
+      new:
+        header: "Создать новый бэйдж"
+      show:
+        badge: "Бэйдж"
+        title: "Название бэйджа"
+        edit_badge: "Редактировать бэйдж"
+        rule: "Правило выдачи бэйджа"
+        alt_image_tag: "Изображение бэйджа"
+      form:
+        title: "Название бэйджа" 
+        rule: "Правило присвоения бэйджа"
+        alt_image_tag: "Изображение бэйджа"    
+        success_category: "Пройдены все тесты категории"   
+        success_all_level: "Пройдены все тесты уровня"  
+        success_on_first_try: "Тест пройден с первой попытки"    
   
   devise:
     sessions:
@@ -79,6 +103,7 @@ ru:
       logout: "Выход"
       sign_up: "Регистрация"
       sign_in: "Войти"
+      my_badge: "Мои Бэйджи"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -135,6 +160,8 @@ ru:
         sessions:
           new:
             enter: "Вход"
+      badge:
+          create: "Создать бэйдж"
     select:
       prompt: "Выбрать категорию"
     label:
@@ -148,6 +175,11 @@ ru:
         correct: "Корректность"
       question:
         body: "Текст вопроса"
+      badge:
+        title: "Название бэйджа"
+        rule: "Правило выдачи бэйджа"
+        img_url: "Имя файла"
+
       
 
 
@@ -175,8 +207,10 @@ ru:
       feedback: "Ваше сообщение"
       submit: "Отправить"
 
-
-
-
-
-  
+  user_badges:
+    index:
+      header: "Заработанные бэйджи"
+      badge: "Бэйдж"
+      title: "Название бэйджа"
+      rule: "Правило выдачи бэйджа"
+      alt_image_tag: "Изображение бэйджа"
