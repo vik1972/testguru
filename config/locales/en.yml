@@ -76,7 +76,7 @@ en:
         edit_badge: "Edit badge"
         rule: "Badge issuance rule"
         alt_image_tag: "Badge image" 
-      creare:
+      create:
         success: "The badge was successfully created" 
       form:
         title: "Badge name" 

@@ -79,7 +79,7 @@ ru:
         edit_badge: "Редактировать бэйдж"
         rule: "Правило выдачи бэйджа"
         alt_image_tag: "Изображение бэйджа"
-      creare:
+      create:
         success: "Бэйдж удачно создан"
       form:
         title: "Название бэйджа" 
