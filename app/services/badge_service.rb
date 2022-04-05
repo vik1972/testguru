@@ -8,6 +8,8 @@ class BadgeService
   end
 
   def call
+    return unless @test_passage.success?
+
     Badge.select { |badge| send("#{badge.rule}?", badge) }
   end
 
@@ -18,27 +20,33 @@ class BadgeService
   end
 
   def success_on_first_try?(badge)
-    return unless @test_passage.success? && no_badge?(badge)
+    return unless no_badge?(badge)
 
-    @user.tests.where(id: @test.id).count == 1
+    @test_passages.where(test_id: @test.id).count == 1
   end
 
   def success_category?(badge)
-    return unless @test_passage.success?
+    if badge.parameter.nil? 
+      return
+    end
 
-    category = Category.find_by(id: @test.category_id).title
+    #category = Category.find_by(id: @test.category_id).title
+    category = badge.parameter
     all_tests_category_id = Test.categories(category).ids
-    user_all_tests_category_id = Array(@user.tests.ids)
+    user_all_tests_category_id = @user.tests.categories(category).ids
 
     all_tests_category_id.sort.uniq == user_all_tests_category_id.sort.uniq
   end
 
   def success_all_level?(badge)
-    return unless @test_passage.success?
+    #return unless @test_passage.success?
+    if badge.parameter.nil? or  not badge.parameter[/\A[+-]?\d+\z/]
+      return
+    end
 
-    level = @test.test_level(@test)
-    all_tests_level_id = Array(Test.send("#{level}").ids)
-    user_all_tests_level_id = Array(@user.tests.send("#{level}").ids)
+    level = badge.parameter
+    all_tests_level_id = Test.where(level: level).ids
+    user_all_tests_level_id = @user.tests.where(level: level).ids
     
     all_tests_level_id.sort.uniq == user_all_tests_level_id.sort.uniq
   end

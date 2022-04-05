@@ -71,6 +71,7 @@ ru:
         new_badge: "Создать новый бэйдж"
         rule: "Правило выдачи бэйджа"
         alt_image_tag: "Изображение бэйджа"
+        parameter: "Параметр"
       new:
         header: "Создать новый бэйдж"
       show:
@@ -79,6 +80,7 @@ ru:
         edit_badge: "Редактировать бэйдж"
         rule: "Правило выдачи бэйджа"
         alt_image_tag: "Изображение бэйджа"
+        parameter: "Параметр"
       create:
         success: "Бэйдж удачно создан"
       form:
@@ -87,7 +89,8 @@ ru:
         alt_image_tag: "Изображение бэйджа"    
         success_category: "Пройдены все тесты категории"   
         success_all_level: "Пройдены все тесты уровня"  
-        success_on_first_try: "Тест пройден с первой попытки"    
+        success_on_first_try: "Тест пройден с первой попытки" 
+        parameter: "Параметр"   
   
   devise:
     sessions:
@@ -163,7 +166,9 @@ ru:
           new:
             enter: "Вход"
       badge:
-          create: "Создать бэйдж"
+        create: "Создать бэйдж"
+        update: "Сохранить бэйдж"
+
     select:
       prompt: "Выбрать категорию"
     label:
@@ -215,4 +220,16 @@ ru:
       badge: "Бэйдж"
       title: "Название бэйджа"
       rule: "Правило выдачи бэйджа"
+      parameter: "Параметр"   
       alt_image_tag: "Изображение бэйджа"
+      badges_path: "Все бэйджи"
+
+  badges:
+    index:
+      header: "Все бэйджи системы"
+      badge: "Бэйдж"
+      title: "Название бэйджа"
+      rule: "Правило выдачи бэйджа"
+      parameter: "Параметр"   
+      alt_image_tag: "Изображение бэйджа"
+      badges_path: "Все бэйджи"

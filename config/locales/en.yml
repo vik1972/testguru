@@ -24,6 +24,7 @@ en:
         questions: "Questions"
         actions: "Actions"
         new_test: "New test"
+        parameter: "Parameter"
       edit:
         title: "Edit test"
         test: "Test"

@@ -13,12 +13,14 @@
 
   <p>
     <%= form.label :rule %>
-    <%= form.select :rule, [ [t('.success_category'), Badge::RULES[0]], 
-                             [t('.success_on_first_try'), Badge::RULES[1]], 
-                             [t('.success_all_level'), Badge::RULES[2]]
-                           ],
+    <%= form.select :rule, Badge::RULES,
                            prompt: true %>
   </p>
 
-    <p><%= form.submit %></p>
+  <p>
+    <%= form.label :parameter %>
+    <%= form.text_field :parameter, id: :badge_parameter %>
+  </p>
+
+  <p><%= form.submit %></p>
 <% end %>
