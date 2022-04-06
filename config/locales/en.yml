@@ -24,6 +24,7 @@ en:
         questions: "Questions"
         actions: "Actions"
         new_test: "New test"
+        parameter: "Parameter"
       edit:
         title: "Edit test"
         test: "Test"
@@ -60,6 +61,32 @@ en:
     navbar:
       header: "Admin Panel"
       logout: "Logout"
+    badges:
+      index:
+        header: "All available badges"
+        badge: "Badge"
+        title: "Badge name"
+        new_badge: "Create new badge"
+        rule: "Badge issuance rule"
+        alt_image_tag: "Badge image"  
+      new:
+        header: "Создать новый бэйдж"
+      show:
+        badge: "Badge"
+        title: "Badge name"
+        edit_badge: "Edit badge"
+        rule: "Badge issuance rule"
+        alt_image_tag: "Badge image" 
+      create:
+        success: "The badge was successfully created" 
+      form:
+        title: "Badge name" 
+        rule: "Badge issuance rule"
+        alt_image_tag: "Badge image"     
+        success_category: "Passed all category tests"   
+        success_all_level: "Passed all level tests"  
+        success_on_first_try: "The test was passed on the first attempt"   
+  
 
   devise:
     sessions:
@@ -77,6 +104,7 @@ en:
       logout: "Logout"
       sign_up: "Sign_Up"
       sign_in: "Sign_In"
+      my_badge: "My Badges"
     errors:
       header:
         one: "Detected %{count} error"
@@ -167,3 +195,14 @@ en:
       email: "Your email"
       feedback: "Your message"
       submit: "Submit"
+  badges:
+    index:
+      header: "Earned badges"
+      badge: "Badge"
+      title: "Badge name"
+      rule: "Badge issuance rule"
+      alt_image_tag: "Badge image"
+
+
+
+  

@@ -1,0 +1,23 @@
+<div>
+  <h3 class="text-center mt-5"><%= t('.header') %></h3>
+</div>
+
+<div class="col-12">
+  <table class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th scope="col" class="col-3"><%= t('.badge') %></th>
+        <th scope="col" class="col-3"><%= t('.title') %></th>
+        <th scope="col" class="col-3"><%= t('.rule') %></th>
+        <th scope="col" class="col-3"><%= t('.parameter') %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <%= render @badges %>
+    </tbody>
+  </table>
+  <div class="col-3">
+      <%= link_to t('admin.actions.back'), user_badges_path %></p>
+  </div>
+</div>

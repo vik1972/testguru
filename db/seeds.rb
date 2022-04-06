@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
   categories = Category.create!([
-   {title: "Начальный"}, 
-   {title: "Базовый"}, 
-   {title: "Сложный"}
+   {title: "Logica"}, 
+   {title: "Backend"}, 
+   {title: "Computer"}
   ])
 
   users = User.create!([
@@ -132,5 +132,7 @@
     {body: "повышение защиты данных", value: 0, question_id: questions[15].id}, 
     {body: "упрощение обмена данными", value: 1, correct: true, question_id: questions[15].id}
   ]) 
+
+  
 
  
