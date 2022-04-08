@@ -1,3 +1,4 @@
+
 <h1><%= t('.current_test', title: @test_passage.test.title) %></h1>
 <p>
   <b><%= @test_passage.current_question.body %></b>
@@ -16,8 +17,16 @@
     <%= @test_passage.percent_correct %>
   </div>
 </div>
+ 
+<% if @test_passage.test.timer %>
+  <b><%= t('.remaining_time') %>:</b>
+  <%= content_tag :span, '', id: :timer, data: {timer: @test_passage.timer_finish.to_s} %>
+  <%#= t('.minutes') %>
+<% end %>
 
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+<%= form_with url: test_passage_path(@test_passage), local: true, method: :put,
+              class: 'testpassage-form', data: { testpassage_id: @test_passage.id } do |form| %>
+              
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
       <%= b.check_box id: "answer_ids_#{b.object.id}" %>

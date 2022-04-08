@@ -9,7 +9,7 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_question, on: %i[create update]
 
   def success?
-    percent_correct >= PASSING_SCORE
+    percent_correct >= PASSING_SCORE && !time_is_up?
   end
   
   def completed?
@@ -17,7 +17,7 @@ class TestPassage < ApplicationRecord
   end
   
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
+    if correct_answer?(answer_ids) && !time_is_up?
       self.correct_questions += 1
     end
     save!
@@ -53,5 +53,13 @@ class TestPassage < ApplicationRecord
     else
       test.questions.order(:id).where('id > ?', current_question.id).first
     end
+  end
+
+  def timer_finish
+    created_at + test.timer.minutes
+  end
+
+  def time_is_up?
+    test.timer? && timer_finish.past?
   end
 end

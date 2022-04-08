@@ -11,6 +11,7 @@ import sorting from "../utilities/sorting"
 import password_check from "../utilities/password_check.js"
 import form_inline from "../utilities/form_inline.js"
 import progress_bar from "../utilities/progress_bar.js"
+import timer from "../utilities/timer.js"
 
 //=require jquery3
 //=require popper
