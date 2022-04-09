@@ -23,6 +23,7 @@ ru:
         questions: "Вопросов"
         actions: "Действия"
         new_test: "Создать новый тест"
+        timer: "Время (мин)"
       edit:
         title: "Редактировать тест"
         test: "Tест"
@@ -128,6 +129,7 @@ ru:
       level: "Уровень"
       questions: "Вопросов"
       actions: "Действия"
+      timer: "Время (мин)"
 
 
   test_passages:
@@ -143,6 +145,7 @@ ru:
       from: " из"
       next: "Далее"
       test_not_found: "Тест не найден"
+      remaining_time: "Оставшееся время"
     update:
       test_not_found: "Тест не найден"
     gist:
@@ -176,6 +179,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        timer: "Время (мин)"
       answer:
         body: "Текст ответа"
         value: "Количество баллов"

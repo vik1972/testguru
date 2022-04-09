@@ -12,6 +12,7 @@ en:
         question: "Question"
         url: "Gist url"
         email: "User email"
+        timer: "Time (min)"
     tests:
       create:
         succes: 'Test was successfully created'
@@ -25,6 +26,7 @@ en:
         actions: "Actions"
         new_test: "New test"
         parameter: "Parameter"
+        timer: "Time (min)"
       edit:
         title: "Edit test"
         test: "Test"
@@ -34,6 +36,7 @@ en:
       show:
         test: "Test"
         level: "Level"
+        timer: "Time (min)"
         new_question: "New question"
         questions: "Questions"
         edit_test: "Edit test"
@@ -122,6 +125,7 @@ en:
       level: "Level"
       quest_count: "Questions count"
       actions: "Actions"
+      timer: "Time (min)"
 
   test_passages:
     result:
@@ -136,6 +140,7 @@ en:
       from: " from"
       next: "Next"
       test_not_found: "Test nit found"
+      remaining_time: "Remaining time"
     update:
       test_not_found: "Test nit found"
     gist:
@@ -165,6 +170,7 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+        timer: "Time (min)"
       answer:
         body: "Body answer"
         value: "Value"
